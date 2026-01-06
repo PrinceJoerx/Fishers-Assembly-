@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <title>Fishers Assembly</title>
+  <link rel="stylesheet" href="/src/output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Playfair Display", serif;
+    }
+ 
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #272626; /* Matches your body color */
+}
+
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/vTFp8CgQ/photo-removebg-preview-1.png">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/vTFp8CgQ/photo-removebg-preview-1.png">
+</head>
+
+<body class="bg-[#272626]">
+
+  <nav>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="relative flex h-20 items-center justify-between">
+
+        <div class="flex shrink-0 items-center gap-3">
+          <img src="https://i.postimg.cc/vTFp8CgQ/photo-removebg-preview-1.png" alt="Fishers Assembly"
+            class="h-12 w-auto" />
+          <span class="text-white font-bold text-lg hidden md:block tracking-tight">Fishers Assembly</span>
+        </div>
+
+        <div class="hidden sm:flex sm:items-center sm:gap-x-4">
+          <a href="#" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white shadow-sm">About Us</a>
+          <a href="index.html"
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition">Home</a>
+
+          <div class="relative">
+            <button popovertarget="church-dropdown"
+              class="group inline-flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white outline-none transition">
+              <span>Spiritual Support</span>
+              <svg viewBox="0 0 20 20" fill="currentColor"
+                class="size-5 text-amber-500 group-hover:rotate-180 transition-transform duration-200">
+                <path fill-rule="evenodd"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <el-popover id="church-dropdown" anchor="bottom" popover class="w-screen max-w-md bg-transparent px-4 py-3">
+              <div class="overflow-hidden rounded-2xl bg-gray-900 ring-1 ring-white/10 shadow-2xl">
+                <div class="p-4 grid gap-1">
+
+                  <a href="https://wa.me/2347063570404?text=Hello%20Pst.%20Victor,%20I%20Really%20Need%20Prayers"
+                    target="_blank" title="Send A Prayer Request To Our Pst"
+                    class="group flex gap-x-4 rounded-xl p-3 hover:bg-white/5 transition">
+                    <div
+                      class="flex size-11 flex-none items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition">
+                      <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">Prayer Request</div>
+                      <p class="text-sm text-gray-400">Share your burdens; let us pray with you.</p>
+                    </div>
+                  </a>
+                  </a>
+
+                  <a href="https://wa.me/2348034623529?text=Hello%20Pst.%20K.C,%20I%20Really%20Need%20Counselling%20On%20This%20Matter"
+                    target="_blank" title="Send a message to Pst. K.C"
+                    class="group flex gap-x-4 rounded-xl p-3 hover:bg-white/5 transition">
+                    <div
+                      class="flex size-11 flex-none items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition">
+                      <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0a5.995 5.995 0 0 0-4.058-2.932m0 0a3 3 0 1 0-4.681 0" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">Counseling</div>
+                      <p class="text-sm text-gray-400">Schedule a session with our ministers.</p>
+                    </div>
+                  </a>
+
+                </div>
+
+                <div class="bg-white/5 p-4 flex justify-between items-center">
+                  <span class="text-xs text-gray-400">Need immediate help?</span>
+                  <a href="https://wa.me/2348038885881"
+                    class="text-xs font-bold text-amber-500 hover:text-amber-400">Chat
+                    on WhatsApp →</a>
+                </div>
+              </div>
+            </el-popover>
+          </div>
+
+          <a href="blog.html"
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition">Blog
+            </a>
+          <button onclick="openGiveModal()"
+            class="rounded-full hidden md:block bg-amber-600 px-5 py-2 text-sm font-bold text-white hover:bg-amber-500 shadow-lg shadow-amber-900/20 transition-all active:scale-95">
+            GIVE
+          </button>
+        </div>
+
+        <div class="flex items-center sm:hidden">
+          <button type="button" command="--toggle" commandfor="mobile-menu"
+            class="p-2 text-gray-400 hover:text-white transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-7">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div> <el-disclosure id="mobile-menu" hidden class="sm:hidden border-t border-white/5 pb-4">
+        <div class="space-y-1 px-2 pt-2">
+          <a href="#" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">About</a>
+          <a href="index.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Home</a>
+          <a href="blog.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Blog</a>
+          <button onclick="openGiveModal()"
+            class="bg-amber-600 block ont-medium rounded-full px-3 py-2 text-basetext-sm font-bold text-white hover:bg-amber-500 shadow-lg shadow-amber-900/20 transition-all active:scale-95">
+            GIVE
+          </button>
+        </div>
+      </el-disclosure>
+    </div>
+  </nav>
+
+
+  <div id="give-modal"
+    class="fixed inset-0 z-[10002] hidden items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+    <div
+      class="bg-white dark:bg-[#1a1a1a] w-full max-w-md rounded-3xl overflow-hidden shadow-2xl transform transition-all scale-95 opacity-0"
+      id="give-modal-content">
+
+      <div class="p-6 text-center border-b dark:border-white/5">
+        <h3 class="text-2xl font-black text-gray-900 dark:text-white">Support the Ministry</h3>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <a href="https://paystack.shop/pay/cs2zkp-w82" onclick="handleOnlineGive()" target="_blank"
+          class="flex items-center gap-4 p-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black transition group">
+          <div class="w-10 h-10 bg-black/10 rounded-full flex items-center justify-center"><i
+              class="fa fa-credit-card"></i></div>
+          <div class="text-left font-bold text-sm">Give Online</div>
+        </a>
+
+        <div class="p-4 rounded-2xl bg-gray-100 dark:bg-white/5 border dark:border-white/5">
+          <p class="text-[10px] uppercase tracking-widest text-amber-500 font-bold mb-2">Bank Transfer</p>
+          <div class="flex items-center justify-between">
+
+            <span id="account-num" class="font-mono font-bold text-gray-900 dark:text-white">3037332713</span>
+
+            <button onclick="copyToClipboard('3037332713')" class="text-amber-500 hover:text-amber-400">
+              <i class="fa fa-copy"></i> COPY
+            </button>
+
+          </div>
+          <span class="font-mono font-bold text-gray-900 dark:text-white">First Bank</span>
+        </div>
+      </div>
+
+      <button onclick="closeGiveModal()"
+        class="w-full py-4 text-gray-500 text-xs font-bold hover:text-red-500 transition border-t dark:border-white/5">CLOSE</button>
+    </div>
+  </div>
+  <div id="live-bar" class="hidden bg-amber-600 text-white py-2 px-4 text-center font-bold">
+    <a href="https://t.me/fishersassemblyintl" target="_blank" class="flex items-center justify-center gap-2">
+      <box-icon name='telegram' type='logo' color='white' size='xs'></box-icon>
+      JOIN SERVICE: We are live 🔴! Get the link on Telegram →
+    </a>
+  </div>
+
+
+  <div id="live-bar" class="hidden bg-amber-600 text-white py-2 px-4 text-center font-bold">
+    <a href="https://t.me/fishersassemblyintl" target="_blank" class="flex items-center justify-center gap-2">
+      <box-icon name='telegram' type='logo' color='white' size='xs'></box-icon>
+      JOIN SERVICE: We are live 🔴! Get the link on Telegram →
+    </a>
+  </div>
+
+
+  <section class="py-24 bg-white dark:bg-[#0f0f0f] transition-colors duration-300 text-white">
+    <div class="w-full max-w-7xl px-4 mx-auto">
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center gap-12">
+            
+           <div class="relative group">
+                <div class="absolute -inset-4 bg-amber-500/10 rounded-[2rem] blur-2xl group-hover:bg-amber-500/20 transition duration-700"></div>
+                <div class="relative rounded-3xl overflow-hidden border-8 border-white dark:border-[#1e1e1e] shadow-2xl">
+                    <img src="https://i.postimg.cc/4xmg4PJ6/Untitled.png" alt="About Us" class="w-full h-[500px] object-cover">
+                </div>
+            </div>
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-start">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title mb-6">About Us</h2>
+                
+                <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10">
+                    Founded on the principles of faith, hope, and love, our church has been a beacon in the community for over three decades. We believe in creating a space where everyone feels welcome to explore their faith and grow in their relationship with God.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4 w-full mb-10">
+                    <div class="p-6 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+                        <h4 class="text-3xl font-black text-amber-500">33+</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-bold uppercase"> Evangelism Outreaach </p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+                        <h4 class="text-3xl font-black text-amber-500">100%</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-bold uppercase">Community Driven</p>
+                    </div>
+                </div>
+            </div>
+
+           
+
+        </div>
+    </div>
+</section>
+
+  <section class="py-24 relative xl:mr-0 lg:mr-5 mr-0 bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
+    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+      <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
+        <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
+          <div class="w-full flex-col justify-center items-start gap-8 flex">
+            <div class="flex-col justify-start lg:items-start items-center gap-4 flex">
+              <h6 class="text-amber-500 text-base font-bold uppercase tracking-widest">Our Mission</h6>
+              <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
+                <h2 class="text-gray-900 dark:text-white text-4xl font-black leading-normal lg:text-start text-center">
+                  Proclaiming the Word, <br>Building the Body.</h2>
+                <p
+                  class="text-gray-500 dark:text-gray-400 text-base font-normal leading-relaxed lg:text-start text-center">
+                  Our story is a testament to God's faithfulness. Through every challenge, we have seen lives
+                  transformed, families restored, and a community united in the pursuit of Christ\u2019s mission.
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full flex-col justify-center items-start gap-6 flex">
+              <div class="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
+                <div
+                  class="w-full h-full p-5 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-amber-500/50 transition-all">
+                  <h4 class="text-gray-900 dark:text-white text-2xl font-black">25+ Years</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">Of Faithful Ministry & Service</p>
+                </div>
+                <div
+                  class="w-full h-full p-5 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-amber-500/50 transition-all">
+                  <h4 class="text-gray-900 dark:text-white text-2xl font-black">500+ Lives</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">Impacted Through Outreach</p>
+                </div>
+              </div>
+              <div class="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
+                <div
+                  class="w-full p-5 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-amber-500/50 transition-all">
+                  <h4 class="text-gray-900 dark:text-white text-2xl font-black">12+ Missions</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">Supported Around Nigeria</p>
+                </div>
+                <div
+                  class="w-full h-full p-5 rounded-2xl border border-gray-200 dark:border-white/5 hover:border-amber-500/50 transition-all">
+                  <h4 class="text-gray-900 dark:text-white text-2xl font-black">100% Grace</h4>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">Driven by Christ's Love</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onclick="window.location.href='https://wa.me/2348038885881?text=Hello%20Pst.%20Joe,%20I%20would%20like%20to%20connect%20with%20the%20church%20family.' "
+            class="sm:w-fit w-full group px-6 py-3 bg-amber-500 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-full shadow-lg transition-all duration-300 justify-center items-center flex gap-2">
+            <span class="text-sm font-black uppercase tracking-widest">Connect With Us</span>
+            <i class="fa fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </button>
+        </div>
+
+        <div class="w-full lg:justify-start justify-center items-start flex">
+          <div
+            class="sm:w-[564px] w-full sm:h-[646px] h-[400px] bg-gray-100 dark:bg-white/5 rounded-3xl relative overflow-hidden">
+            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              src="https://i.postimg.cc/MK3nDwQR/PSX-20260105-065544.jpg" alt="Church Family" />
+            <div
+              class="absolute bottom-0 right-0 w-32 h-32 bg-amber-500/10 backdrop-blur-md rounded-tl-3xl border-t border-l border-white/20 flex items-center justify-center">
+              <i class="fa fa-cross text-4xl text-amber-500/50"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="bg-white dark:bg-[#0f0f0f] py-24 border-t border-gray-100 dark:border-white/5">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-md text-center">
+          <span class="text-amber-500 text-sm font-bold uppercase tracking-widest mb-4 block">Stay Connected</span>
+          <h2 class="mb-4 text-4xl tracking-tight font-black text-gray-900 dark:text-white">Join Our Newsletter</h2>
+          <p class="mx-auto mb-8 max-w-2xl font-medium text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
+            Receive weekly devotionals, event updates, and spiritual encouragement straight to your inbox.
+          </p>
+          
+          <form 
+  action="https://formspree.io/f/mlgdynkk" 
+  method="POST"
+  id="newsletter-form" 
+  class="max-w-screen-sm mx-auto"
+>
+    <div class="flex flex-col sm:flex-row gap-3">
+        <div class="relative w-full">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-4 pointer-events-none">
+                <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+            </div>
+            <input 
+              name="email"
+              type="email" 
+              id="newsletter-email" 
+              class="block p-4 pl-11 w-full text-sm text-gray-900 bg-gray-50 rounded-2xl sm:rounded-r-none border border-gray-200 focus:ring-amber-500 focus:border-amber-500 dark:bg-[#1a1a1a] dark:border-white/10 dark:text-white" 
+              placeholder="Your email address" 
+              required
+            >
+        </div>
+        <button 
+          type="submit" 
+          class="py-4 px-8 text-sm font-black text-white rounded-2xl sm:rounded-l-none bg-amber-600 hover:bg-amber-500 transition-all active:scale-95 shadow-lg shadow-amber-900/20"
+        >
+          SUBSCRIBE
+        </button>
+    </div>
+</form>
+      </div>
+  </div>
+</section>
+  <!-- Spiritual Support Dropdown for mobile-->
+  <div class="relative md:hidden sm:block">
+    <button popovertarget="church-dropdown1"
+      class="group inline-flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white outline-none transition">
+      <span>Spiritual Support</span>
+      <svg viewBox="0 0 20 20" fill="currentColor"
+        class="size-5 text-amber-500 transition-transform group-hover:rotate-180">
+        <path fill-rule="evenodd"
+          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+
+    <el-popover id="church-dropdown1" anchor="bottom" popover
+      class="bg-transparent border-none p-0 shadow-none overflow-visible">
+      <div class="mt-2 w-80 overflow-hidden rounded-2xl bg-[#1a1a1a] ring-1 ring-white/10 shadow-2xl">
+
+        <div class="p-3 space-y-1">
+
+          <a href="https://wa.me/2347063570404?text=Hello%20Pst.%20Victor,%20I%20Really%20Need%20Prayers"
+            target="_blank" title="Send A Prayer Request To Our Pst"
+            class="flex items-center gap-4 rounded-lg p-3 hover:bg-white/5 transition group">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Prayer Request</p>
+              <p class="text-[11px] text-gray-400">Let us pray with you.</p>
+            </div>
+          </a>
+
+          <a href="https://wa.me/2348034623529?text=Hello%20Pst.%20K.C,%20I%20Really%20Need%20Counselling%20On%20This%20Matter"
+            target="_blank" title="Send a message to Pst. K.C"
+            class="flex items-center gap-4 rounded-lg p-3 hover:bg-white/5 transition group">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Counseling</p>
+              <p class="text-[11px] text-gray-400">Speak with a minister.</p>
+            </div>
+          </a>
+        </div>
+        <div class="bg-white/5 p-4 flex justify-between items-center">
+          <span class="text-xs text-gray-400">Need immediate help?</span>
+          <a href="https://wa.me/2348038885881" class="text-xs font-bold text-amber-500 hover:text-amber-400">Chat on
+            WhatsApp →</a>
+        </div>
+      </div>
+    </el-popover>
+  </div>
+  <footer class="bg-gray-800 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+
+      <div>
+        <h3 class="text-white text-xl font-bold mb-4">Fishers Assembly</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Raising a generation of fishers of men, grounded in faith and moving in the power of the Holy Spirit.
+        </p>
+      </div>
+
+      <div class="md:ml-[8rem] sm:ml-[0]">
+        <h3
+          class="text-white text-lg font-semibold mb-4 underline decoration-amber-500 underline-offset-8 hover:decoration-black">
+          Gatherings</h3>
+        <ul class="text-gray-400 text-sm space-y-2">
+          <li><span class="text-amber-500">Sundays:</span> 8:00 AM (Sunday School)</li>
+          <li><span class="text-amber-500">Wednesdays:</span> 5:30 PM (Bible Study)</li>
+          <li><span class="text-gray-300 italic">Uturu, Abia State, Nigeria</span></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-center md:items-end">
+        <h3 class="text-white text-lg font-semibold mb-4 md:mr-[48px] sm:mr-[0]">Connect With Us</h3>
+        <div class=" flex justify-center flex-row items-center justify-center items-center ">
+
+          <div class="flex  my-5 bg-[#1A1920] p-2 rounded-full gap-3 relative">
+
+            <div id="telegram"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out">
+              <a href="https://t.me/fishersassemblyintl" target="_blank">
+                <box-icon name='telegram' id="tg-bg" type='logo'
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='telegram' type='logo' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+            </div>
+            <div id="phone-call"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out">
+              <a href="tel:+2348034623529">
+                <box-icon name='phone' id="ph-bg"
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='phone' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+            </div>
+            <div id="whatsapp"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out group relative">
+
+              <a href="https://wa.me/2348038885881?text=Hello%20Pst.%20Joe,%20I%20would%20like%20to%20connect%20with%20the%20church%20family."
+                target="_blank" title="Chat with Pst. Joe">
+
+                <box-icon name='whatsapp' id="wa-bg" type='logo'
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='whatsapp' type='logo' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+
+            </div>
+            <div id="gmail"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out ">
+              <a href="mailto:fishersassemblyintl@gmail.com">
+                <box-icon name='gmail' id="gm-bg" type='logo'
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='gmail' type='logo' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+            </div>
+            <div id="selector"
+              class="w-12 h-12 flex justify-center items-center rounded-full bg-[#131217] absolute transition duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] translate-x-0">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col items-center">
+      <p class="text-gray-500 text-xs mb-2">Designed for the Glory of God</p>
+      <p class="text-white text-sm">© 2024 Fishers Assembly. All rights reserved.</p>
+    </div>
+
+    <div id="backToTopContainer" class="fixed-button-wrapper mb-[4rem]">
+      <button class="church-back-btn" onclick="scrollToTop()">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+          <path
+            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L339.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+          </path>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <div id="chat-wrapper" class="fixed bottom-6 right-6 z-[9999] mb-[4rem] mr-[80rem] flex flex-col items-end">
+    <div id="chat-window"
+      class="hidden mb-4 w-72 bg-white dark:bg-[#1e1e1e] mr-[-15rem] rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-white/10 flex-col animate-slide-up">
+      <div class="bg-[#075e54] p-4 text-white flex items-center gap-3">
+        <div class="relative">
+          <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fa fa-university text-lg"></i>
+          </div>
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#075e54] rounded-full"></span>
+        </div>
+        <div>
+          <p class="text-sm font-bold">Church Office</p>
+          <p class="text-[10px] opacity-80">Online | Fast Response</p>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#e5ddd5] dark:bg-[#0f0f0f] h-40 flex flex-col justify-start gap-3 overflow-y-auto">
+        <div
+          class="bg-white dark:bg-[#2a2a2a] p-3 rounded-lg rounded-tl-none text-[11px] shadow-sm max-w-[85%] text-gray-800 dark:text-gray-200">
+          Hi there! 👋 How can we help you or pray for you today?
+        </div>
+      </div>
+
+      <div class="p-3 bg-white dark:bg-[#1e1e1e] border-t dark:border-white/5">
+        <a href="https://wa.me/8034623529?text=Hello! I am visiting the website and would like to chat." target="_blank"
+          class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebd59] text-white py-2.5 rounded-xl font-bold text-xs transition-all shadow-md">
+          <i class="fa fa-whatsapp text-base"></i> START CONVERSATION
+        </a>
+      </div>
+    </div>
+
+    <button onclick="toggleChatWindow()"
+      class="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95">
+      <i id="chat-toggle-icon" class="fa fa-whatsapp text-3xl"></i>
+    </button>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+<script src="index.js"></script>
+
+</html>

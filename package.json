@@ -1,0 +1,27 @@
+{
+  "name": "CHURUCH-P1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tailwindcss -i ./src/input.css -o ./src/style.css",
+    "watch": "tailwindcss -i  ./src/input.css -o ./src/style.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.1",
+    "@tailwindplus/elements": "^1.0.21",
+    "flowbite": "^4.0.1",
+    "tailwindcss": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "tailwind.config.js",
+      "src"
+    ],
+    "exec": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  }
+}

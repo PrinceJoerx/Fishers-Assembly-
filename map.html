@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <title>Fishers Assembly</title>
+  <link rel="stylesheet" href="/src/output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Playfair Display", serif;
+    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #272626; /* Matches your body color */
+}
+
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/vTFp8CgQ/photo-removebg-preview-1.png">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/vTFp8CgQ/photo-removebg-preview-1.png">
+</head>
+
+<body class="bg-[#272626]">
+
+  <nav>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="relative flex h-20 items-center justify-between">
+
+        <div class="flex shrink-0 items-center gap-3">
+          <img src="https://i.postimg.cc/vTFp8CgQ/photo-removebg-preview-1.png" alt="Fishers Assembly"
+            class="h-12 w-auto" />
+          <span class="text-white font-bold text-lg hidden md:block tracking-tight">Fishers Assembly</span>
+        </div>
+
+        <div class="hidden sm:flex sm:items-center sm:gap-x-4">
+          <a href="#" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white shadow-sm">Map</a>
+          <a href="index.html"
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition">Home</a>
+
+          <div class="relative">
+            <button popovertarget="church-dropdown"
+              class="group inline-flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white outline-none transition">
+              <span>Spiritual Support</span>
+              <svg viewBox="0 0 20 20" fill="currentColor"
+                class="size-5 text-amber-500 group-hover:rotate-180 transition-transform duration-200">
+                <path fill-rule="evenodd"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <el-popover id="church-dropdown" anchor="bottom" popover class="w-screen max-w-md bg-transparent px-4 py-3">
+              <div class="overflow-hidden rounded-2xl bg-gray-900 ring-1 ring-white/10 shadow-2xl">
+                <div class="p-4 grid gap-1">
+
+                  <a href="https://wa.me/2347063570404?text=Hello%20Pst.%20Victor,%20I%20Really%20Need%20Prayers"
+                    target="_blank" title="Send A Prayer Request To Our Pst"
+                    class="group flex gap-x-4 rounded-xl p-3 hover:bg-white/5 transition">
+                    <div
+                      class="flex size-11 flex-none items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition">
+                      <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">Prayer Request</div>
+                      <p class="text-sm text-gray-400">Share your burdens; let us pray with you.</p>
+                    </div>
+                  </a>
+                  </a>
+
+                  <a href="https://wa.me/2348034623529?text=Hello%20Pst.%20K.C,%20I%20Really%20Need%20Counselling%20On%20This%20Matter"
+                    target="_blank" title="Send a message to Pst. K.C"
+                    class="group flex gap-x-4 rounded-xl p-3 hover:bg-white/5 transition">
+                    <div
+                      class="flex size-11 flex-none items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition">
+                      <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0a5.995 5.995 0 0 0-4.058-2.932m0 0a3 3 0 1 0-4.681 0" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-white">Counseling</div>
+                      <p class="text-sm text-gray-400">Schedule a session with our ministers.</p>
+                    </div>
+                  </a>
+
+                </div>
+
+                <div class="bg-white/5 p-4 flex justify-between items-center">
+                  <span class="text-xs text-gray-400">Need immediate help?</span>
+                  <a href="https://wa.me/2348038885881"
+                    class="text-xs font-bold text-amber-500 hover:text-amber-400">Chat
+                    on WhatsApp →</a>
+                </div>
+              </div>
+            </el-popover>
+          </div>
+
+          <a href="about.html"
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition">About
+            Us</a>
+          <button onclick="openGiveModal()"
+            class="rounded-full hidden md:block bg-amber-600 px-5 py-2 text-sm font-bold text-white hover:bg-amber-500 shadow-lg shadow-amber-900/20 transition-all active:scale-95">
+            GIVE
+          </button>
+        </div>
+
+        <div class="flex items-center sm:hidden">
+          <button type="button" command="--toggle" commandfor="mobile-menu"
+            class="p-2 text-gray-400 hover:text-white transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-7">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div> <el-disclosure id="mobile-menu" hidden class="sm:hidden border-t border-white/5 pb-4">
+        <div class="space-y-1 px-2 pt-2">
+          <a href="#" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Map</a>
+          <a href="index.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Home</a>
+          <a href="about.html"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
+          <button onclick="openGiveModal()"
+            class="bg-amber-600 block ont-medium rounded-full px-3 py-2 text-basetext-sm font-bold text-white hover:bg-amber-500 shadow-lg shadow-amber-900/20 transition-all active:scale-95">
+            GIVE
+          </button>
+        </div>
+      </el-disclosure>
+    </div>
+  </nav>
+
+
+  <div id="give-modal"
+    class="fixed inset-0 z-[10002] hidden items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+    <div
+      class="bg-white dark:bg-[#1a1a1a] w-full max-w-md rounded-3xl overflow-hidden shadow-2xl transform transition-all scale-95 opacity-0"
+      id="give-modal-content">
+
+      <div class="p-6 text-center border-b dark:border-white/5">
+        <h3 class="text-2xl font-black text-gray-900 dark:text-white">Support the Ministry</h3>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <a href="https://paystack.shop/pay/cs2zkp-w82" onclick="handleOnlineGive()" target="_blank"
+          class="flex items-center gap-4 p-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black transition group">
+          <div class="w-10 h-10 bg-black/10 rounded-full flex items-center justify-center"><i
+              class="fa fa-credit-card"></i></div>
+          <div class="text-left font-bold text-sm">Give Online</div>
+        </a>
+
+        <div class="p-4 rounded-2xl bg-gray-100 dark:bg-white/5 border dark:border-white/5">
+          <p class="text-[10px] uppercase tracking-widest text-amber-500 font-bold mb-2">Bank Transfer</p>
+          <div class="flex items-center justify-between">
+
+            <span id="account-num" class="font-mono font-bold text-gray-900 dark:text-white">3037332713</span>
+
+            <button onclick="copyToClipboard('3037332713')" class="text-amber-500 hover:text-amber-400">
+              <i class="fa fa-copy"></i> COPY
+            </button>
+
+          </div>
+          <span class="font-mono font-bold text-gray-900 dark:text-white">First Bank</span>
+        </div>
+      </div>
+
+      <button onclick="closeGiveModal()"
+        class="w-full py-4 text-gray-500 text-xs font-bold hover:text-red-500 transition border-t dark:border-white/5">CLOSE</button>
+    </div>
+  </div>
+  <div id="live-bar" class="hidden bg-amber-600 text-white py-2 px-4 text-center font-bold">
+    <a href="https://t.me/fishersassemblyintl" target="_blank" class="flex items-center justify-center gap-2">
+      <box-icon name='telegram' type='logo' color='white' size='xs'></box-icon>
+      JOIN SERVICE: We are live 🔴! Get the link on Telegram →
+    </a>
+  </div>
+
+
+  <div id="live-bar" class="hidden bg-amber-600 text-white py-2 px-4 text-center font-bold">
+    <a href="https://t.me/fishersassemblyintl" target="_blank" class="flex items-center justify-center gap-2">
+      <box-icon name='telegram' type='logo' color='white' size='xs'></box-icon>
+      JOIN SERVICE: We are live 🔴! Get the link on Telegram →
+    </a>
+  </div>
+
+
+<section class="py-24 bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h6 class="text-amber-500 text-base font-bold uppercase tracking-widest mb-3">Visit Us</h6>
+      <h2 class="text-gray-900 dark:text-white text-4xl md:text-5xl font-black mb-6">Our Location</h2>
+      <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+        Join us for fellowship and worship. We are located in the heart of Uturu, ready to welcome you home.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
+      
+      <div class="lg:col-span-2 rounded-[2rem] overflow-hidden border-8 border-gray-100 dark:border-white/5 shadow-2xl h-[500px] relative group">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.053530994943!2d7.37754385!3d5.839818849999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042ef3a6b8c83e1%3A0xb89f30e9d6d7e5e!2sUturu%2C%20Abia!5e0!3m2!1sen!2sng!4v1704520000000!5m2!1sen!2sng" 
+          class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        
+        <a href="https://www.google.com/maps/dir//Uturu,+Abia/@5.8398188,7.3775438,15z" target="_blank"
+          class="absolute bottom-6 right-6 bg-amber-500 text-black px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-xl hover:bg-white transition-all active:scale-95 flex items-center gap-2">
+          <i class="fa fa-location-arrow"></i> Get Directions
+        </a>
+      </div>
+
+      <div class="space-y-6">
+        
+        <div class="p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-all">
+            <i class="fa fa-map-marker text-xl"></i>
+          </div>
+          <h4 class="text-xl font-black text-gray-900 dark:text-white mb-2">Church Address</h4>
+          <p class="text-gray-500 dark:text-gray-400 leading-relaxed italic">
+            Fishers Assembly International,<br>
+            Uturu, Abia State, Nigeria.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-all">
+            <i class="fa fa-phone text-xl"></i>
+          </div>
+          <h4 class="text-xl font-black text-gray-900 dark:text-white mb-2">Call Office</h4>
+          <p class="text-gray-500 dark:text-gray-400 font-mono">+234 803 462 3529</p>
+          <p class="text-gray-500 dark:text-gray-400 font-mono">+234 803 888 5881</p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-amber-600 text-white shadow-xl shadow-amber-900/20">
+          <h4 class="text-xl font-black mb-4">Service Times</h4>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between border-b border-white/20 pb-2">
+              <span class="font-bold uppercase opacity-80">Sunday School</span>
+              <span>8:00 AM</span>
+            </div>
+            <div class="flex justify-between border-b border-white/20 pb-2">
+              <span class="font-bold uppercase opacity-80">Bible Study</span>
+              <span>5:30 PM (Wed)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      
+      <div>
+        <h6 class="text-amber-500 text-base font-bold uppercase tracking-widest mb-4">Reach Out</h6>
+        <h2 class="text-gray-900 dark:text-white text-4xl font-black mb-6 leading-tight">Have a Question? <br>Send us a Message.</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-lg mb-8">
+          Whether you’re looking for a new church home, need spiritual guidance, or just want to say hello, we’d love to hear from you.
+        </p>
+        
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 text-gray-700 dark:text-gray-300">
+            <div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <span class="font-medium">fishersassemblyintl@gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="form-wrapper" class="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-[2.5rem] border dark:border-white/5 shadow-2xl">
+        <form action="https://api.web3forms.com/submit" method="POST" id="church-contact-form">
+          
+          <input type="hidden" name="access_key" value="d3d0427b-5b27-4fec-98b2-069f7e33fc17">
+          
+          <input type="hidden" name="redirect" value="https://fishersassembly.org/map.html">
+
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <input type="text" name="name" placeholder="Full Name" required 
+              class="w-full p-4 bg-white dark:bg-black border dark:border-white/10 rounded-2xl dark:text-white outline-none focus:ring-2 focus:ring-amber-500">
+            
+            <input type="email" name="email" placeholder="Email Address" required 
+              class="w-full p-4 bg-white dark:bg-black border dark:border-white/10 rounded-2xl dark:text-white outline-none focus:ring-2 focus:ring-amber-500">
+          </div>
+
+          <select name="subject" class="w-full p-4 mb-4 bg-white dark:bg-black border dark:border-white/10 rounded-2xl dark:text-white outline-none">
+            <option>General Inquiry</option>
+            <option>Prayer Request</option>
+            <option>Testimony</option>
+          </select>
+
+          <textarea name="message" rows="4" placeholder="Your Message..." required 
+            class="w-full p-4 mb-6 bg-white dark:bg-black border dark:border-white/10 rounded-2xl dark:text-white outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+
+          <button type="submit" id="submit-btn" 
+            class="w-full bg-amber-600 hover:bg-amber-500 text-white font-black py-4 rounded-2xl transition-all active:scale-95 flex items-center justify-center gap-2">
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+
+    
+     
+</section>
+<section class="py-24 bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    
+    <div class="text-center mb-16">
+      <span class="text-amber-500 text-sm font-bold uppercase tracking-widest mb-3 block">Seeking Truth</span>
+      <h2 class="text-gray-900 dark:text-white text-4xl font-black mb-4">Spiritual Guidance</h2>
+      <p class="text-gray-500 dark:text-gray-400">Understanding the heart and atmosphere of our assembly.</p>
+    </div>
+
+    <div class="space-y-4">
+      <details class="group rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 shadow-sm hover:shadow-md transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900 dark:text-white">
+          <h3 class="text-lg font-bold">What is the atmosphere of your worship?</h3>
+          <span class="relative size-5 shrink-0 text-amber-500">
+            <i class="fa fa-plus absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+            <i class="fa fa-minus absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+          </span>
+        </summary>
+        <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+          Our services are characterized by the **tangible presence of God**. We believe in spirited, heartfelt worship and the prophetic flow of the Holy Spirit. Expect an atmosphere of faith where the Word is preached with power and miracles are a natural occurrence.
+        </p>
+      </details>
+
+      <details class="group rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 shadow-sm hover:shadow-md transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900 dark:text-white">
+          <h3 class="text-lg font-bold">Can I receive personal prayer or ministration?</h3>
+          <span class="relative size-5 shrink-0 text-amber-500">
+            <i class="fa fa-plus absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+            <i class="fa fa-minus absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+          </span>
+        </summary>
+        <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+          Absolutely. At the end of every service, we have an **Altar Call** and a time for personal ministration. Our ministers and prayer team are always available to stand in agreement with you for healing, deliverance, or spiritual breakthrough.
+        </p>
+      </details>
+
+      <details class="group rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 shadow-sm hover:shadow-md transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900 dark:text-white">
+          <h3 class="text-lg font-bold">How do I grow deeper in my walk with Christ here?</h3>
+          <span class="relative size-5 shrink-0 text-amber-500">
+            <i class="fa fa-plus absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+            <i class="fa fa-minus absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+          </span>
+        </summary>
+        <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+          Beyond our Sunday services, we encourage every member to join our **Mid-week Bible Study** and our prayer wings. We are a "teaching" ministry, focused on equipping you with the spiritual tools needed to become a "fisher of men" in your daily life.
+        </p>
+      </details>
+
+      <details class="group rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 p-6 shadow-sm hover:shadow-md transition-all [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900 dark:text-white">
+          <h3 class="text-lg font-bold">Is the Holy Spirit welcome in your gatherings?</h3>
+          <span class="relative size-5 shrink-0 text-amber-500">
+            <i class="fa fa-plus absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity"></i>
+            <i class="fa fa-minus absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity"></i>
+          </span>
+        </summary>
+        <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+          The Holy Spirit is the **Senior Administrator** of our assembly. We do not quench the Spirit; we provide room for the gifts of the Spirit to operate decently and in order, ensuring that every soul is edified and God is glorified.
+        </p>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Spiritual Support Dropdown for mobile-->
+  <div class="relative md:hidden sm:block">
+    <button popovertarget="church-dropdown1"
+      class="group inline-flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white outline-none transition">
+      <span>Spiritual Support</span>
+      <svg viewBox="0 0 20 20" fill="currentColor"
+        class="size-5 text-amber-500 transition-transform group-hover:rotate-180">
+        <path fill-rule="evenodd"
+          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+
+    <el-popover id="church-dropdown1" anchor="bottom" popover
+      class="bg-transparent border-none p-0 shadow-none overflow-visible">
+      <div class="mt-2 w-80 overflow-hidden rounded-2xl bg-[#1a1a1a] ring-1 ring-white/10 shadow-2xl">
+
+        <div class="p-3 space-y-1">
+
+          <a href="https://wa.me/2347063570404?text=Hello%20Pst.%20Victor,%20I%20Really%20Need%20Prayers"
+            target="_blank" title="Send A Prayer Request To Our Pst"
+            class="flex items-center gap-4 rounded-lg p-3 hover:bg-white/5 transition group">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Prayer Request</p>
+              <p class="text-[11px] text-gray-400">Let us pray with you.</p>
+            </div>
+          </a>
+
+          <a href="https://wa.me/2348034623529?text=Hello%20Pst.%20K.C,%20I%20Really%20Need%20Counselling%20On%20This%20Matter"
+            target="_blank" title="Send a message to Pst. K.C"
+            class="flex items-center gap-4 rounded-lg p-3 hover:bg-white/5 transition group">
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-black">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Counseling</p>
+              <p class="text-[11px] text-gray-400">Speak with a minister.</p>
+            </div>
+          </a>
+        </div>
+        <div class="bg-white/5 p-4 flex justify-between items-center">
+          <span class="text-xs text-gray-400">Need immediate help?</span>
+          <a href="https://wa.me/2348038885881" class="text-xs font-bold text-amber-500 hover:text-amber-400">Chat on
+            WhatsApp →</a>
+        </div>
+      </div>
+    </el-popover>
+  </div>
+  <footer class="bg-gray-800 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+
+      <div>
+        <h3 class="text-white text-xl font-bold mb-4">Fishers Assembly</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Raising a generation of fishers of men, grounded in faith and moving in the power of the Holy Spirit.
+        </p>
+      </div>
+
+      <div class="md:ml-[8rem] sm:ml-[0]">
+        <h3
+          class="text-white text-lg font-semibold mb-4 underline decoration-amber-500 underline-offset-8 hover:decoration-black">
+          Gatherings</h3>
+        <ul class="text-gray-400 text-sm space-y-2">
+          <li><span class="text-amber-500">Sundays:</span> 8:00 AM (Sunday School)</li>
+          <li><span class="text-amber-500">Wednesdays:</span> 5:30 PM (Bible Study)</li>
+          <li><span class="text-gray-300 italic">Uturu, Abia State, Nigeria</span></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-center md:items-end">
+        <h3 class="text-white text-lg font-semibold mb-4 md:mr-[48px] sm:mr-[0]">Connect With Us</h3>
+        <div class=" flex justify-center flex-row items-center justify-center items-center ">
+
+          <div class="flex  my-5 bg-[#1A1920] p-2 rounded-full gap-3 relative">
+
+            <div id="telegram"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out">
+              <a href="https://t.me/fishersassemblyintl" target="_blank">
+                <box-icon name='telegram' id="tg-bg" type='logo'
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='telegram' type='logo' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+            </div>
+            <div id="phone-call"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out">
+              <a href="tel:+2348034623529">
+                <box-icon name='phone' id="ph-bg"
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='phone' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+            </div>
+            <div id="whatsapp"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out group relative">
+
+              <a href="https://wa.me/2348038885881?text=Hello%20Pst.%20Joe,%20I%20would%20like%20to%20connect%20with%20the%20church%20family."
+                target="_blank" title="Chat with Pst. Joe">
+
+                <box-icon name='whatsapp' id="wa-bg" type='logo'
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='whatsapp' type='logo' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+
+            </div>
+            <div id="gmail"
+              class="w-12 h-12 flex justify-center items-center rounded-full z-10 fill-[#75747A] transition-color duration-500 ease-in-out ">
+              <a href="mailto:fishersassemblyintl@gmail.com">
+                <box-icon name='gmail' id="gm-bg" type='logo'
+                  class="absolute fill-[#75747A] transition duration-1000 ease-in-out hidden"></box-icon>
+
+                <box-icon name='gmail' type='logo' animation='tada-hover' class="z-10"></box-icon>
+              </a>
+            </div>
+            <div id="selector"
+              class="w-12 h-12 flex justify-center items-center rounded-full bg-[#131217] absolute transition duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] translate-x-0">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col items-center">
+      <p class="text-gray-500 text-xs mb-2">Designed for the Glory of God</p>
+      <p class="text-white text-sm">© 2024 Fishers Assembly. All rights reserved.</p>
+    </div>
+
+    <div id="backToTopContainer" class="fixed-button-wrapper mb-[4rem]">
+      <button class="church-back-btn" onclick="scrollToTop()">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+          <path
+            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L339.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+          </path>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <div id="chat-wrapper" class="fixed bottom-6 right-6 z-[9999] mb-[4rem] mr-[80rem] flex flex-col items-end">
+    <div id="chat-window"
+      class="hidden mb-4 w-72 bg-white dark:bg-[#1e1e1e] mr-[-15rem] rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-white/10 flex-col animate-slide-up">
+      <div class="bg-[#075e54] p-4 text-white flex items-center gap-3">
+        <div class="relative">
+          <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fa fa-university text-lg"></i>
+          </div>
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#075e54] rounded-full"></span>
+        </div>
+        <div>
+          <p class="text-sm font-bold">Church Office</p>
+          <p class="text-[10px] opacity-80">Online | Fast Response</p>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#e5ddd5] dark:bg-[#0f0f0f] h-40 flex flex-col justify-start gap-3 overflow-y-auto">
+        <div
+          class="bg-white dark:bg-[#2a2a2a] p-3 rounded-lg rounded-tl-none text-[11px] shadow-sm max-w-[85%] text-gray-800 dark:text-gray-200">
+          Hi there! 👋 How can we help you or pray for you today?
+        </div>
+      </div>
+
+      <div class="p-3 bg-white dark:bg-[#1e1e1e] border-t dark:border-white/5">
+        <a href="https://wa.me/8034623529?text=Hello! I am visiting the website and would like to chat." target="_blank"
+          class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebd59] text-white py-2.5 rounded-xl font-bold text-xs transition-all shadow-md">
+          <i class="fa fa-whatsapp text-base"></i> START CONVERSATION
+        </a>
+      </div>
+    </div>
+
+    <button onclick="toggleChatWindow()"
+      class="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95">
+      <i id="chat-toggle-icon" class="fa fa-whatsapp text-3xl"></i>
+    </button>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+<script src="index.js"></script>
+
+</html>
