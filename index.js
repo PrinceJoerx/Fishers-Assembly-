@@ -212,7 +212,6 @@ function displaySermons(posts) {
     }
 
     container.innerHTML = posts.map(post => {
-        const slug = generateSlug(post.title);
         return `
         <div class="bg-[#1e1e1e] rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition hover:scale-[1.02] flex flex-col relative">
             
@@ -258,7 +257,7 @@ function displaySermons(posts) {
                             <i class="fa fa-file-pdf-o"></i> NOTES (PDF)
                         </a>` : ''}
 
-                    <button onclick="showQR('${window.location.origin}/sermon.html?s=${slug}', '${post.title}')" class="bg-white/5 text-gray-400 py-2 rounded-lg hover:text-white transition text-[9px] font-black flex items-center justify-center gap-1">
+                    <button onclick="showQR('${post.title}')" class="bg-white/5 text-gray-400 py-2 rounded-lg hover:text-white transition text-[9px] font-black flex items-center justify-center gap-1">
                         <i class="fa fa-qrcode text-sm"></i> QR CODE
                     </button>
 
@@ -360,19 +359,21 @@ function updateClickCount(title) {
 // --- 7. SHARING & UTILITIES ---
 
 function getSermonLink(title) {
-    const slug = generateSlug(title);
-    return `${location.origin}/sermon.html?s=${slug}`;
+    // Now returns blog.html instead of sermon page
+    return `${location.origin}/blog.html`;
 }
 
 function shareToWhatsApp(title, preacher) {
     const link = getSermonLink(title);
-    const message = `Check out this sermon: "${title}" by ${preacher}\n\n${link}`;
+    const message = `Check out this sermon: "${title}" by ${preacher}\n\nVisit our sermons page:\n${link}`;
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
-function showQR(url, title) {
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
+function showQR(title) {
+    // Changed to use blog.html instead of sermon.html
+    const blogUrl = `${location.origin}/blog.html`;
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(blogUrl)}`;
     const qrModal = document.createElement('div');
     qrModal.className = "fixed inset-0 z-[10001] flex items-center justify-center bg-black/80 p-4";
     qrModal.onclick = () => qrModal.remove();
@@ -380,7 +381,8 @@ function showQR(url, title) {
         <div class="bg-white p-6 rounded-2xl text-center" onclick="event.stopPropagation()">
             <h3 class="text-black font-bold mb-4">${title}</h3>
             <img src="${qrUrl}" alt="QR Code" class="mx-auto mb-4 border">
-            <p class="text-gray-500 text-[10px]">Tap background to close</p>
+            <p class="text-gray-500 text-[10px]">Scan to view sermons on our blog page</p>
+            <p class="text-gray-500 text-[10px] mt-2">Tap background to close</p>
         </div>
     `;
     document.body.appendChild(qrModal);
@@ -410,7 +412,7 @@ function closeVideo() {
 function copySermonLink(title) {
     const link = getSermonLink(title);
     navigator.clipboard.writeText(link).then(() => {
-        showToast(`Link for "${title}" copied!`);
+        showToast(`Blog page link copied!`);
     });
 }
 
@@ -817,7 +819,11 @@ function initContactForm() {
         const formData = new FormData(contactForm);
         
         btn.disabled = true;
-        btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> SENDING...';
+        btn.innerHTML = `
+            <div class="flex items-center gap-2">
+                <i class="fa fa-spinner fa-spin"></i> SENDING...
+            </div>
+        `;
 
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -858,11 +864,3 @@ function initContactForm() {
         });
     });
 }
-// Inside your submit listener
-btn.disabled = true;
-btn.innerHTML = `
-    <div class="flex items-center gap-2">
-        <div class="church-spinner" style="width:18px; height:18px; border-width:2px;"></div> 
-        SENDING...
-    </div>
-`;
