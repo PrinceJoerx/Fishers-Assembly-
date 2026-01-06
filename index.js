@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         loadSingleSermon();
     }
 
-    // Live Bar logic (Sundays 8 AM - 12 PM)
+    // Live Bar logic (Sundays 8 AM - 12 PM Nigerian Time)
     const now = new Date();
     const liveBar = document.getElementById('live-bar');
-    if (liveBar && now.getDay() === 0 && now.getHours() >= 8 && now.getHours() <= 12) {
+    if (liveBar && now.getDay() === 0 && now.getHours() >= 8 && now.getHours() < 12) {
         liveBar.classList.remove('hidden');
     }
 
@@ -212,8 +212,9 @@ function displaySermons(posts) {
     }
 
     container.innerHTML = posts.map(post => {
+        const slug = generateSlug(post.title);
         return `
-        <div class="bg-[#1e1e1e] rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition hover:scale-[1.02] flex flex-col relative">
+        <div class="bg-[#1e1e1e] rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition hover:scale-[1.02] flex flex-col relative" id="sermon-${slug}">
             
             ${post.isPopular ? `
                 <div class="absolute top-4 left-4 z-20 flex items-center gap-1 bg-gradient-to-r from-amber-500 to-orange-600 text-black text-[10px] font-black px-3 py-1 rounded-full shadow-xl animate-bounce">
@@ -243,7 +244,7 @@ function displaySermons(posts) {
                              <i class="fa fa-headphones"></i> LISTEN
                         </button>` : ''}
                     
-                    <button onclick="shareToWhatsApp('${post.title}', '${post.preacher}')" class="bg-green-600 hover:bg-green-500 text-white py-2 rounded-lg text-[9px] font-black flex items-center justify-center gap-1 transition">
+                    <button onclick="shareToWhatsApp('${post.title}', '${post.preacher}', '${slug}')" class="bg-green-600 hover:bg-green-500 text-white py-2 rounded-lg text-[9px] font-black flex items-center justify-center gap-1 transition">
                          <i class="fa fa-whatsapp text-sm"></i> WHATSAPP
                     </button>
                     
@@ -257,11 +258,11 @@ function displaySermons(posts) {
                             <i class="fa fa-file-pdf-o"></i> NOTES (PDF)
                         </a>` : ''}
 
-                    <button onclick="showQR('${post.title}')" class="bg-white/5 text-gray-400 py-2 rounded-lg hover:text-white transition text-[9px] font-black flex items-center justify-center gap-1">
+                    <button onclick="showQR('${slug}', '${post.title}')" class="bg-white/5 text-gray-400 py-2 rounded-lg hover:text-white transition text-[9px] font-black flex items-center justify-center gap-1">
                         <i class="fa fa-qrcode text-sm"></i> QR CODE
                     </button>
 
-                    <button onclick="copySermonLink('${post.title}')" class="bg-white/5 text-gray-400 py-2 rounded-lg hover:text-white transition text-[9px] font-black flex items-center justify-center gap-1">
+                    <button onclick="copySermonLink('${slug}', '${post.title}')" class="bg-white/5 text-gray-400 py-2 rounded-lg hover:text-white transition text-[9px] font-black flex items-center justify-center gap-1">
                         <i class="fa fa-link"></i> COPY LINK
                     </button>
                     
@@ -358,22 +359,20 @@ function updateClickCount(title) {
 
 // --- 7. SHARING & UTILITIES ---
 
-function getSermonLink(title) {
-    // Now returns blog.html instead of sermon page
-    return `${location.origin}/blog.html`;
+function getSermonLink(slug) {
+    return `${location.origin}/blog.html#sermon-${slug}`;
 }
 
-function shareToWhatsApp(title, preacher) {
-    const link = getSermonLink(title);
-    const message = `Check out this sermon: "${title}" by ${preacher}\n\nVisit our sermons page:\n${link}`;
+function shareToWhatsApp(title, preacher, slug) {
+    const link = getSermonLink(slug);
+    const message = `Check out this sermon: "${title}" by ${preacher}\n\n${link}`;
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
-function showQR(title) {
-    // Changed to use blog.html instead of sermon.html
-    const blogUrl = `${location.origin}/blog.html`;
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(blogUrl)}`;
+function showQR(slug, title) {
+    const url = getSermonLink(slug);
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
     const qrModal = document.createElement('div');
     qrModal.className = "fixed inset-0 z-[10001] flex items-center justify-center bg-black/80 p-4";
     qrModal.onclick = () => qrModal.remove();
@@ -381,8 +380,7 @@ function showQR(title) {
         <div class="bg-white p-6 rounded-2xl text-center" onclick="event.stopPropagation()">
             <h3 class="text-black font-bold mb-4">${title}</h3>
             <img src="${qrUrl}" alt="QR Code" class="mx-auto mb-4 border">
-            <p class="text-gray-500 text-[10px]">Scan to view sermons on our blog page</p>
-            <p class="text-gray-500 text-[10px] mt-2">Tap background to close</p>
+            <p class="text-gray-500 text-[10px]">Tap background to close</p>
         </div>
     `;
     document.body.appendChild(qrModal);
@@ -409,10 +407,10 @@ function closeVideo() {
     }
 }
 
-function copySermonLink(title) {
-    const link = getSermonLink(title);
+function copySermonLink(slug, title) {
+    const link = getSermonLink(slug);
     navigator.clipboard.writeText(link).then(() => {
-        showToast(`Blog page link copied!`);
+        showToast(`Link for "${title}" copied!`);
     });
 }
 
@@ -489,15 +487,41 @@ function startCountdown() {
     
     countdownInterval = setInterval(() => {
         const now = new Date();
-        let nextService = new Date();
-        nextService.setDate(now.getDate() + (7 - now.getDay()) % 7);
-        nextService.setHours(17, 0, 0, 0);
-        if (now > nextService) nextService.setDate(nextService.getDate() + 7);
+        
+        // Calculate next Sunday at 8:00 AM
+        let nextService = new Date(now);
+        const daysUntilSunday = (7 - now.getDay()) % 7;
+        
+        if (daysUntilSunday === 0) {
+            // Today is Sunday
+            if (now.getHours() >= 8 && now.getHours() < 12) {
+                // Service is in progress (8 AM - 12 PM)
+                timerBox.innerHTML = '<span class="text-amber-500 font-black animate-pulse">SERVICE IN PROGRESS</span>';
+                return;
+            } else if (now.getHours() >= 12) {
+                // After 12 PM, set to next Sunday
+                nextService.setDate(now.getDate() + 7);
+            }
+        } else {
+            // Not Sunday, add days until Sunday
+            nextService.setDate(now.getDate() + daysUntilSunday);
+        }
+        
+        // Set to 8:00 AM on that Sunday
+        nextService.setHours(8, 0, 0, 0);
+        
         const diff = nextService - now;
+        
+        if (diff <= 0) {
+            timerBox.innerHTML = '<span class="text-amber-500 font-black">SERVICE STARTING SOON</span>';
+            return;
+        }
+        
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const m = Math.floor((diff / (1000 * 60)) % 60);
         const s = Math.floor((diff / 1000) % 60);
+        
         const dDisp = d > 0 ? `${d}d ` : "";
         timerBox.innerText = `${dDisp}${h.toString().padStart(2, '0')}h ${m.toString().padStart(2, '0')}m ${s.toString().padStart(2, '0')}s`;
     }, 1000);
@@ -529,7 +553,41 @@ function initReminderPopup() {
     closeBtn?.addEventListener('click', closeModal);
     
     googleBtn?.addEventListener('click', () => {
-        window.open(`https://www.google.com/calendar/render?action=TEMPLATE&text=Sunday+Service&details=Join+us!&location=Online&recur=RRULE:FREQ=WEEKLY;BYDAY=SU`, '_blank');
+        // Calculate next Sunday at 8:00 AM
+        const now = new Date();
+        const daysUntilSunday = (7 - now.getDay()) % 7 || 7;
+        const nextSunday = new Date(now);
+        nextSunday.setDate(now.getDate() + daysUntilSunday);
+        nextSunday.setHours(8, 0, 0, 0);
+        
+        // Format date for Google Calendar (YYYYMMDDTHHMMSS)
+        const formatDate = (date) => {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            const seconds = String(date.getSeconds()).padStart(2, '0');
+            return `${year}${month}${day}T${hours}${minutes}${seconds}`;
+        };
+        
+        const startDate = formatDate(nextSunday);
+        
+        // End time: 12:00 PM (4 hours later)
+        const endSunday = new Date(nextSunday);
+        endSunday.setHours(12, 0, 0, 0);
+        const endDate = formatDate(endSunday);
+        
+        // Create Google Calendar URL with proper parameters
+        const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE` +
+            `&text=${encodeURIComponent('Sunday Service - Fishers Assembly Church')}` +
+            `&dates=${startDate}/${endDate}` +
+            `&details=${encodeURIComponent('Join us for our weekly Sunday service! Experience worship, teaching, and fellowship with the Fishers Assembly Church family.')}` +
+            `&location=${encodeURIComponent('Fishers Assembly Church, Aba, Abia State, Nigeria')}` +
+            `&recur=${encodeURIComponent('RRULE:FREQ=WEEKLY;BYDAY=SU')}` +
+            `&ctz=Africa/Lagos`;
+        
+        window.open(calendarUrl, '_blank');
         closeModal();
     });
 }
@@ -782,7 +840,6 @@ function initNewsletterForm() {
                 showToast("Blessings! Redirecting to our community...");
                 newsletterForm.reset();
                 
-                // Open WhatsApp after 2 seconds
                 setTimeout(() => {
                     const welcomeText = encodeURIComponent(
                         "Hello Fishers Assembly! I just subscribed to your newsletter and would like to stay connected."
@@ -821,7 +878,8 @@ function initContactForm() {
         btn.disabled = true;
         btn.innerHTML = `
             <div class="flex items-center gap-2">
-                <i class="fa fa-spinner fa-spin"></i> SENDING...
+                <div class="church-spinner" style="width:18px; height:18px; border-width:2px;"></div> 
+                SENDING...
             </div>
         `;
 
